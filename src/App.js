@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import { Container, Navbar, Nav } from "react-bootstrap";
+import { Route, Routes, Link } from "react-router-dom";
+import { FiBookOpen } from "react-icons/fi";
+import Tentang from "./components/About";
+import Surah from "./components/Surah";
 import './App.css';
+import Ayat from "./components/Ayat";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar className="nav-bg" variant="dark" fixed="top">
+          <Container>
+          <Navbar.Brand className="nav-brand"><Link to="/"><FiBookOpen />&nbsp;&nbsp;Qur'an Digital</Link></Navbar.Brand>
+            <Nav className="nav-list ms-auto">
+                <Link to="/about">About</Link>
+            </Nav>
+          </Container>
+      </Navbar>
+      <Container>
+        
+      </Container>
+      <Routes>
+        <Route path="/" element={<Surah />}></Route>
+        <Route path="/surah/:id" element={<Ayat />}></Route>
+        <Route path="/about" element={<Tentang />}></Route>
+      </Routes>
+    </>
   );
 }
 
