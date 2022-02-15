@@ -9,13 +9,17 @@
 }
 
 .surah-container {
-    padding-top: 60px;
+    margin-top: 20px;
 }
 
-.surah-wrapper.col {
-    margin-top: 25px;
-    border: 1px solid var(--primary-color);
-    padding: 30px 16px 25px 16px;
+.surah-wrapper {
+    padding: 12px 0px;
+}
+
+.surah-card {
+    padding: 12px 6px 6px 6px;
+    border: 1px solid var(--primary-color) !important;
+    border-radius: 0.5rem !important;
 }
 
 .surah-number {
@@ -52,7 +56,15 @@
 .btn-read-surah {
     font-family: 'Poppins', sans-serif;
     background-color: var(--primary-color) !important;
-    color: var(--white-color) !important;
+}
+
+.btn-read-surah a {
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+.btn-read-surah a:hover {
+    color: var(--white-color);
 }
 
 .btn-read-tafsir {
@@ -60,4 +72,27 @@
     background-color: var(--third-color) !important;
     color: var(--white-color) !important;
     margin-left: 5px;
+}
+
+.title-container {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 90px;
+}
+
+.title-content {
+    color: var(--primary-color);
+    font-weight: 800;
+}
+
+.title-subcontent {
+    color: var(--primary-color);
+}
+
+.loading-wrapper {
+    height: 100vh;
+}
+
+.loading {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 100px;
 }

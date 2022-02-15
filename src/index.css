@@ -1,3 +1,10 @@
+:root {
+  --primary-color: #041C32;
+  --secondary-color: #04293A;
+  --third-color: #064663;
+  --white-color: #efefef;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -14,4 +21,17 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--third-color);
+  border-radius: 0.25rem;
 }
