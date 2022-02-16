@@ -61,12 +61,17 @@
     text-align: end;
 }
 
-.ayat-translation {
-    font-family: 'Poppins', sans-serif;
+.ayat-number {
+    font-weight: 800;
+    background-color: var(--primary-color);
+    padding: 4px 10px;
+    color: var(--white-color);
+    border-radius: 0.25rem;
 }
 
-.loading-wrapper {
-    height: 100vh;
+.ayat-translation {
+    font-family: 'Poppins', sans-serif;
+    line-height: 32px;
 }
 
 .loading {

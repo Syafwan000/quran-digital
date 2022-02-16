@@ -3,7 +3,7 @@ import NavbarTop from "./components/NavbarTop";
 import Surah from "./components/Surah";
 import Ayat from "./components/Ayat";
 import About from "./components/About";
-import Footer from "./components/Footer";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -13,8 +13,8 @@ function App() {
         <Route path="/" element={<Surah />}></Route>
         <Route path="/surah/:id" element={<Ayat />}></Route>
         <Route path="/about" element={<About />}></Route>
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
-      <Footer />
     </>
   )
 }

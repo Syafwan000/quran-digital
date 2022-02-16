@@ -49,7 +49,7 @@
     margin-bottom: 5px;
 }
 
-.surah-revelation {
+.surah-info {
     font-family: 'Poppins', sans-serif;
 }
 
@@ -67,13 +67,6 @@
     color: var(--white-color);
 }
 
-.btn-read-tafsir {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--third-color) !important;
-    color: var(--white-color) !important;
-    margin-left: 5px;
-}
-
 .title-container {
     font-family: 'Poppins', sans-serif;
     margin-top: 90px;
@@ -88,11 +81,24 @@
     color: var(--primary-color);
 }
 
-.loading-wrapper {
-    height: 100vh;
-}
-
 .loading {
     font-family: 'Poppins', sans-serif;
     margin-top: 100px;
+    color: var(--primary-color) !important;
+}
+
+@media (max-width: 1200px) {
+    .surah-number, .surah-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .surah-number, .surah-title {
+        font-size: 16px;
+    }
+
+    .surah-arti, .surah-info {
+        font-size: 15px;
+    }
 }

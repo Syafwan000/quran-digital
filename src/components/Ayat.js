@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { FiChevronsLeft } from "react-icons/fi";
 import { useEffect, useLayoutEffect, useState } from "react";
 import { Helmet } from "react-helmet";
+import Footer from "./Footer";
 import './Ayat.css';
 
 function Ayat() {
@@ -25,7 +26,7 @@ function Ayat() {
             setLoading(false);
         }
         getAyat();
-    }, []);
+    }, [params]);
 
     useLayoutEffect(function() {
         window.scrollTo(0, 0);
@@ -34,7 +35,7 @@ function Ayat() {
     if(loading) {
         return (
             <>
-                <Container className="loading-wrapper">
+                <Container>
                     <h1 className="loading text-center">Loading Ayat <Spinner animation="border" /></h1>
                 </Container>
             </>
@@ -68,13 +69,16 @@ function Ayat() {
                     <Row key={a.number.inSurah}>
                         <Col className="ayat-wrapper">
                             <p className="ayat">{a.text.arab}</p>
-                            <p className="ayat-translation">{a.translation.id}</p>
+                            <p className="ayat-translation">
+                                <span className="ayat-number">{a.number.inSurah}</span> {a.translation.id}
+                            </p>
                             <audio controls src={a.audio.primary}></audio>
                         </Col>
                     </Row>
                     )
                 })}
             </Container>
+            <Footer />
         </>
     )
 }

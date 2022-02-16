@@ -2,6 +2,8 @@ import { Container, Row, Col, Button, Card, Spinner } from "react-bootstrap";
 import { useEffect, useLayoutEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
+import Tafsir from "./Tafsir";
 import './Surah.css';
 
 function Surah() {
@@ -26,7 +28,7 @@ function Surah() {
     if(loading) {
         return (
             <>
-                <Container className="loading-wrapper">
+                <Container>
                     <h1 className="loading text-center">Loading Surah <Spinner animation="border" /></h1>
                 </Container>
             </>
@@ -59,9 +61,11 @@ function Surah() {
                                         </span>
                                     </h4>
                                     <p className="surah-arti">"{surat.name.translation.id}"</p>
-                                    <p className="surah-revelation">{surat.revelation.id}</p>
+                                    <p className="surah-info">
+                                        {surat.numberOfVerses} Ayat | {surat.revelation.id}
+                                    </p>
                                     <Button className="btn-read-surah shadow-none" variant="light"><Link to={`/surah/${surat.number}`}>Baca Surah</Link></Button>
-                                    <Button className="btn-read-tafsir shadow-none" variant="light">Tafsir</Button>
+                                    <Tafsir>{surat.tafsir.id}</Tafsir>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -69,6 +73,7 @@ function Surah() {
                 })}
                 </Row>
             </Container>
+            <Footer />
         </>
     )
 }
